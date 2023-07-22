@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+-----------------
+***creating a component using ng g c Container
+container.component.ts
+-----------------------
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-container',
+    templateUrl: './container.component.html',
+    styleUrls: ['./container.component.css']
+})
+export class ContainerComponent{
+
+}
+----------
+.css
+-----
+.wrapper{
+    margin: 0px auto;
+    width: 820px;
+}
+------------
+.html
+--------
+
+DataBinding: It is a technique used in any technology to access data from source and bind to ui
+two ways of databindings are there
+1.one way data binding - it is a tech or process to access data from source and bind to ui if any change occues in ui the data should not updated back to source or database
+		-->Interpolation {{}}
+<h2>{{title}}</h2>
+<h3>{{getdata()}}</h3>
+2.Two way data binding - it is a tech or process to access data from source and bind to ui if any change occurs in ui the data should updated back to database
+
+
+
+--->Model in mvc is responsible for tracking or identiying the changes and storing the data
+--> Model is known as single source of truth
+--->Model tracks the chnages
+--->Model identifyng the changes by using prev value and current value
+--> Model uses property and event binding techniquie to handle two way data binding techniquie
+[]--Property binding
+example:
+<img [src]="source">
+
+()-- event binding
+<input (somevent)="getdata()"/>
+
+[(ngModel)]
+
+<input type="text" [(ngModel)]="title">
+<input type="text" name="Message" ngModel #Message="ngModel"> -->this syntaax follows mvvm technique(model view view model) ,
+ application specification logic is  in "view-Model" i'e UI
+-->A controller is not required to store or track chnages in data
+---> Model handles everything in ui
+Explanation to this input element
+<input type="text" name="Message" ngModel #Message="ngModel">
+inside the input element ngModel is there it stores data and makes textbox dynamically
+--Message refering to an element which controls lot of propeties, the name you entered in the textbox is stored in a property called Value
+
+#Message="ngModel" -- in the ngModel data is storing in the model reference of #Message
+
+
+
+
+
+
+
+
+
+
+
